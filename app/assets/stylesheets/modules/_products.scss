@@ -190,3 +190,32 @@ img{
   line-height: 1.5;
   margin: 16px 0 0 ;
 }
+.sv{
+  background-image: image-url('bg-topMiddleDl-pict.jpg');
+  background-size: cover;
+  background-position: bottom right;
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+.sv-inner{
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  text-align: left;
+  min-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+}
+.sv-subtitle{
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.sv-text{
+  font-size: 18px;
+  margin: 20px 0 30px;
+  line-height: 1.5;
+}
+.sv-btn{
+  display: flex;
+}
