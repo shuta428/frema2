@@ -69,13 +69,50 @@ ul{
   position: relative;
   display: flex;
 }
+.list-category{
+  display: flex;
+  line-height: 38px;
+}
+.category-link{
+  color: #333;
+  text-decoration: none;
+}
+.list-bland{
+  padding: 0 0 0 16px;
+  line-height: 38px;
+}
+.bland-link{
+  color: #333;
+  text-decoration: none;
+}
 .right-list{
   display: flex;
   margin-left: auto;
 }
-.list-category{
+.list-login{
+  color: #333;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+}
+.login-link{
+  display: flex;
+  align-items: center;
+  color: #333;
   text-decoration: none;
-  padding: 0;
+  line-height: 32px;
+
+}
+.list-signup{
+  color: #333;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+}
+.signup-link{
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
 }
 .main{
   background-color: #f8f8f8;
@@ -320,6 +357,7 @@ ul{
 .product-link{
   background-color: #fff;
   display: inline-block;
+  text-decoration: none;
 }
 .priduct-list-img{
   width: 220px;
