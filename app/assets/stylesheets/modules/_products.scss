@@ -242,7 +242,7 @@ ul{
   color: #fff;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
   text-align: left;
-  min-width: 1040px;
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
 }
@@ -344,7 +344,7 @@ ul{
   font-weight: bold;
 }
 .new-product-lists{
-  width: 780px;
+  max-width: 780px;
   margin: 26px auto;
   display: flex;
   justify-content: space-around;
@@ -447,7 +447,7 @@ ul{
   text-align: center;
 }
 .footer-contents{
-  min-width: 840px;
+  max-width: 840px;
   margin: 0 auto;
   display: flex;
 }
