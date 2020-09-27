@@ -13,18 +13,18 @@
     .header-nav
       %ul.left-list
         %li.list-category
-          = link_to "#" do
+          = link_to "#", class: "category-link" do
             = "カテゴリー"
         %li.list-bland
-          = link_to "#" do
+          = link_to "#", class: "bland-link" do
             = "ブランド"
       %ul.right-list
         %li.list-login
-          = link_to "#" do
+          = link_to "#", class: "login-link" do
             = "ログイン"
         %li.list-signup
-          = link_to "#" do
-            = "新規登録"
+          = link_to "#", class: "signup-link" do
+            = "新規会員登録"
 .main
   %section.fv
     .content
@@ -38,3 +38,198 @@
           = image_tag src="Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "apple"
         =link_to "/" do
           = image_tag src="1google-play-badge.png", class: "google"
+  %section.reason
+    %h2.sub-title FURIMAが選ばれる3つの理由
+    %ul.reason-lists
+      %li.reason-list
+        .list-pic
+          %span.number 1
+          = image_tag src="pict-reason-01.jpg"
+        %h3.list-text 3分ですぐに出品
+        %p.list-comment スマホで入力するだけで簡単に出品できる！
+      %li.reason-list
+        .list-pic
+          %span.number 2
+          = image_tag src="pict-reason-02.jpg"
+        %h3.list-text シンプルで使いやすい
+        %p.list-comment めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.reason-list
+        .list-pic
+          %span.number 3
+          = image_tag src="pict-reason-03.jpg"
+        %h3.list-text 手数料業界最安
+        %p.list-comment 最大3%でお得に出品&購入!
+  %section.sv
+    .sv-inner
+      %h2.sv-subtitle 会員数日本一位
+      %p.sv-text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません
+      .sv-btn
+        =link_to "/" do
+          = image_tag src="Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "apple"
+        =link_to "/" do
+          = image_tag src="1google-play-badge.png", class: "google"
+  %section.feature
+    %h2.feature-title FURIMAの特徴
+    .feature-lists
+      %section.feature-list
+        %figure.list-img
+          = image_tag src="icon-01.png"
+        %h3.feature-text 簡単に売り買いできる
+        %p.feature-comment スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.feature-list
+        %figure.list-img
+          = image_tag src="icon-03.png"
+        %h3.feature-text 売上金は即日振込みに対応
+        %p.feature-comment 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %seciton.feature-list
+        %figure.list-img
+          = image_tag src="icon-04.png"
+        %h3.feature-text 様々な支払いに対応
+        %p.feature-comment お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  %section.pickupcategory
+    %h2.pickup-title ピックアップカテゴリー
+    .pickup-inner
+      .pickup-header
+        = link_to "#", class: "pickup-subtitle" do
+          %h3.pickup-secondtitle 新規投稿商品
+      .new-product-lists
+        .new-product-list
+          = link_to "#", class: "product-link" do
+            %figure.product-list-img
+              = image_tag src="product1.png", class: "product-img"
+            .pickup-body
+              %h3.product-name カレーライス
+              .product-details
+                %ul.detail-list
+                  %li 1000円
+                  %li
+                  %i.fa.fa-star 3
+                %p.tax (税込)
+        .new-product-list
+          = link_to "#", class: "product-link" do
+            %figure.product-list-img
+              = image_tag src="product1.png", class: "product-img"
+            .pickup-body
+              %h3.product-name カレーライス
+              .product-details
+                %ul.detail-list
+                  %li 1000円
+                  %li
+                  %i.fa.fa-star 4
+                %p.tax (税込)
+        .new-product-list
+          = link_to "#", class: "product-link" do
+            %figure.product-list-img
+              = image_tag src="product1.png", class: "product-img"
+            .pickup-body
+              %h3.product-name カレーライス
+              .product-details
+                %ul.detail-list
+                  %li 1000円
+                  %li
+                  %i.fa.fa-star 5
+                %p.tax (税込)
+  %section.pickupbland
+    %h2.pickup-title ピックアップブランド
+    .pickup-inner
+      .pickup-header
+        = link_to "#", class: "pickup-subtitle" do
+          %h3.pickup-secondtitle アーカイバ
+      .new-product-lists
+        .new-product-list
+          = link_to "#", class: "product-link" do
+            %figure.product-list-img
+              = image_tag src="product1.png", class: "product-img"
+            .pickup-body
+              %h3.product-name カレーライス
+              .product-details
+                %ul.detail-list
+                  %li 1000円
+                  %li
+                  %i.fa.fa-star 2
+                %p.tax (税込)
+        .new-product-list
+          = link_to "#", class: "product-link" do
+            %figure.product-list-img
+              = image_tag src="product1.png", class: "product-img"
+            .pickup-body
+              %h3.product-name カレーライス
+              .product-details
+                %ul.detail-list
+                  %li 1000円
+                  %li
+                  %i.fa.fa-star 4
+                %p.tax (税込)
+        .new-product-list
+          = link_to "#", class: "product-link" do
+            %figure.product-list-img
+              = image_tag src="product1.png", class: "product-img"
+            .pickup-body
+              %h3.product-name カレーライス
+              .product-details
+                %ul.detail-list
+                  %li 1000円
+                  %li
+                  %i.fa.fa-star 3
+                %p.tax (税込)
+%aside.download-banner
+  .download-inner
+    %h2.inner-title だれでもかんたん、人生を変えるフリマアプリ
+    %p.inner-text 今すぐ無料ダウンロード！
+    .download-btn
+      =link_to "/" do
+        = image_tag src="Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "apple"
+      =link_to "/" do
+        = image_tag src="1google-play-badge.png", class: "google"
+.footer
+  %ul.footer-contents
+    %li.footer-content
+      %h2.footer-content-header FURIMAについて
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "会社概要（運営会社）"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "プライバシーポリシー"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMA利用規約"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "ポイントに関する特約"
+    %li.footer-content
+      %h2.footer-content-header FURIMAを見る
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "カテゴリー一覧"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "ブランド一覧"
+    %li.footer-content
+      %h2.footer-content-header ヘルプ＆ガイド
+
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMAガイド"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMAロゴ利用ガイドライン"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "お知らせ"
+  .footer-logo
+    = link_to "#" do
+      = image_tag src="logo-white.png", class: "logo-white"
+  %p.footer-copy © FURIMA
+= link_to "#" do
+  .purchase-btn
+    %span.purchase-text 出品する
+    = image_tag src="icon_camera.png", class: "purchase-icon"
