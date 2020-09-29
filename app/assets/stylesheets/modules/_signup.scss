@@ -1,0 +1,241 @@
+body{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  font-size: 14px;
+}
+.signup-wrapper{
+  background-color: #F5F5F5;
+  
+ 
+
+}
+.signup-header{
+  height: 128px;
+  text-align: center;
+}
+.signup-header-logo{
+  margin: 40px 0 0;
+  display: inline-block;
+}
+.signup-header-link{
+  width: 185px;
+  height: 50px;
+  line-height: 50px;
+}
+.signup-logo{
+  width: 185px;
+  height: 50px;
+}
+.signup-main{
+  display: block;
+}
+.signup-container{
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.singup-title{
+  font-size: 22px;
+  padding: 32px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: bold;
+}
+.register_form_content{
+  padding: 24px 16px 40px;
+  border-top: 1px solid #f5f5f5;
+}
+.signup-content{
+  max-width: 343px;
+  margin: 0 auto;
+}
+.form-group{
+  margin: 24px 0 0;
+}
+.form-group:first-child{
+  margin: 0;
+}
+.form-group-label{
+  font-weight: 600;
+} 
+.require{
+  background-color: #3CCACE;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+.input-area{
+  width: 100%;
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.form-group-password{
+  margin: 24px 0 0;
+}
+.form-info-text{
+  margin: 8px 0 0;
+  color: #888;
+  line-height: 1.5;
+}
+.form-subtitle{
+  font-size: 16px;
+  font-weight: 600;
+}
+.form-subtitle-text{
+  margin: 8px 0 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+.input-area-half{
+  width: calc(50% - 6px);
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.input-area-half:first-of-type{
+  margin-right: 8px;
+  width: calc(50% - 6px);
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.birthday-select-wrap{
+  display: flex;
+}
+.select-wrap{
+  display: flex;
+  margin: 8px 0 0; 
+  
+ 
+}
+.icon-arrow-bottom{
+  right: 12px;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  color: #888;
+  font-size: 8px;
+  transform: translate(0, -50%);
+}
+
+.select-birthday{
+  padding: 0 10px;
+  width: 80px;
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+
+}
+.ymd{
+  margin: 0 10px;
+  line-height: 48px;
+}
+.birth-month{
+  width: 76px;
+  display: inline-block;
+  margin: 8px 0 0;
+  position: relative;
+  background-color: #fff;
+}
+.birth-day{
+  width: 76px;
+  display: inline-block;
+  margin: 8px 0 0;
+  position: relative;
+  background-color: #fff;
+}
+.sub-comment{
+  margin: 8px 0 0;
+  line-height: 1.5;
+  color: #888;
+}
+.signup-next-btn{
+  margin: 24px 0 0;
+  background-color: #3CCACE;
+  border: 1px  solid #3CCACE;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+.text-right{
+  margin: 40px 0  0;
+  text-align: right;
+}
+.id-text{
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+.id-text-link{
+  color: #0099e8;
+  text-decoration: none;
+}
+.signup-footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 40px 0;
+  text-align: center;
+  display: block;
+}
+.footer-nav{
+  display: block;
+}
+.footer-text-list{
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+}
+.footer-text-list-next{
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 0 0 16px;
+}
+.footer-text{
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+.footer-logo-link{
+  display: block;
+  color: #333;
+  
+  margin: 40px  auto 0;
+  text-decoration: none;
+
+
+}
