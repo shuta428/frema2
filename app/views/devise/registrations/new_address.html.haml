@@ -5,17 +5,17 @@
         = image_tag src="logo.png", class: "signup-logo"
   %main.signup-main
     %section.signup-container
-      %h2.singup-title 会員情報入力
-      = form_with model: @user, url: user_registration_path, id: :register_form, class: :register_form_content, local: true do |f|
-        = render "devise/shared/error_messages", resource: @user
+      %h2.singup-title 住所情報登録
+      = form_with model: @address, id: :register_form, class: :register_form_content, local: true do |f|
+        = render "devise/shared/error_messages", resource: @address
         .signup-content
           .form-group
-            = f.label :ニックネーム, class: "form-group-label" 
+            = f.label :郵便番号, class: "form-group-label" 
             %span.require 必須
             %br/
-            = f.text_field :nickname, autofocus: true, class: "input-area", placeholder: "例）フリマ太郎"
+            = f.text_field :zipcode, autofocus: true, class: "input-area", placeholder: "例）１２３４５６７"
           .form-group
-            = f.label :メールアドレス, class: "form-group-label" 
+            = f.label :都道府県, class: "form-group-label" 
             %span.require 必須
             %br/
             = f.email_field :email, autofocus: true, class: "input-area", placeholder: "PC・携帯どちらでも可"
@@ -90,5 +90,3 @@
       = image_tag src="logo.png", class: "footer-logo"
     %p
       %small.footer-copy © FURIMA.Inc
-
-
