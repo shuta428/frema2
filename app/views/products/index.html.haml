@@ -19,12 +19,20 @@
           = link_to "#", class: "bland-link" do
             = "ブランド"
       %ul.right-list
-        %li.list-login
-          = link_to "#", class: "login-link" do
-            = "ログイン"
-        %li.list-signup
-          = link_to new_user_registration_path, class: "signup-link" do
-            = "新規会員登録"
+        - if  user_signed_in?
+          %li.list-login
+            = link_to destroy_user_session_path, class: "login-link" do
+              = "ログアウト"
+          %li.list-signup
+            = link_to "#", class: "signup-link" do
+              = "マイページ"
+        - else
+          %li.list-login
+            = link_to user_session_path, class: "login-link" do
+              = "ログイン"
+          %li.list-signup
+            = link_to new_user_registration_path, class: "signup-link" do
+              = "新規会員登録"
 .main
   %section.fv
     .content

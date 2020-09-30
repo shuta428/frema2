@@ -7,6 +7,7 @@
     %section.signup-container
       %h2.singup-title 会員情報入力
       = form_with model: @user, url: user_registration_path, id: :register_form, class: :register_form_content, local: true do |f|
+        = render "devise/shared/error_messages", resource: resource
         .signup-content
           .form-group
             = f.label :ニックネーム, class: "form-group-label" 
@@ -34,6 +35,13 @@
               %br/
               = f.text_field :last_name, autofocus: true, class: "input-area-half", placeholder: "例）山田"
               = f.text_field :first_name, autofocus: true, class: "input-area-half", placeholder: "例）太郎"
+          .form-group
+            .form-group-content
+              = f.label :お名前カナ（全角）, class: "form-group-label" 
+              %span.require 必須
+              %br/
+              = f.text_field :last_name_kana, autofocus: true, class: "input-area-half", placeholder: "例）ヤマダ"
+              = f.text_field :first_name_kana, autofocus: true, class: "input-area-half", placeholder: "例）タロウ"
           .form-group
             %label.form-group-label{:for => "birthday"} 生年月日
             %span.require 必須
