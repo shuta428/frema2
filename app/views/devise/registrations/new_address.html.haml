@@ -18,62 +18,27 @@
             = f.label :都道府県, class: "form-group-label" 
             %span.require 必須
             %br/
-            = f.email_field :email, autofocus: true, class: "input-area", placeholder: "PC・携帯どちらでも可"
-          .form-group-password
-            = f.label :パスワード, class: "form-group-label" 
-            %span.require 必須
-            %br/
-            = f.password_field :password, autofocus: true, class: "input-area", placeholder: "7文字以上の半角英数字"
-            %p.form-info-text ※ 英字と数字の両方を含めて設定してください
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},{class: "input-area", placeholder: "洗濯してください"}
           .form-group
-            %h3.form-subtitle 本人確認
-            %p.form-subtitle-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-          .form-group
-            .form-group-content
-              = f.label :お名前（全角）, class: "form-group-label" 
+            .form-group
+              = f.label :市区町村, class: "form-group-label" 
               %span.require 必須
               %br/
-              = f.text_field :last_name, autofocus: true, class: "input-area-half", placeholder: "例）山田"
-              = f.text_field :first_name, autofocus: true, class: "input-area-half", placeholder: "例）太郎"
+              = f.text_field :city autofocus: true, class: "input-area", placeholder: "例）渋谷区"
           .form-group
-            .form-group-content
-              = f.label :お名前カナ（全角）, class: "form-group-label" 
+            .form-group
+              = f.label :住所, class: "form-group-label" 
               %span.require 必須
               %br/
-              = f.text_field :last_name_kana, autofocus: true, class: "input-area-half", placeholder: "例）ヤマダ"
-              = f.text_field :first_name_kana, autofocus: true, class: "input-area-half", placeholder: "例）タロウ"
+              = f.text_field :address autofocus: true, class: "input-area", placeholder: "例）中央１−２−３"
           .form-group
-            %label.form-group-label{:for => "birthday"} 生年月日
-            %span.require 必須
-            %br/
-            .birthday-select-wrap
-              .select-wrap
-                %i.icon-arrow-bottom
-                = f.select :birth_year, [*(1920..2020)], {}, class: "select-birthday"
-                %span.ymd 年
-              .select-wrap
-                %i.icon-arrow-bottom
-                = f.select :birth_month, [*(1..12)], {}, class: "select-birthday"
-                %span.ymd 月
-              .select-wrap
-                %i.icon-arrow-bottom
-                = f.select :birth_day, [*(1..31)], {}, class: "select-birthday"
-                %span.ymd 日
-            %p.sub-comment
-              ※ ご自身の生年月日をご選択ください。
-          .form-group
-            = f.label :電話番号, class: "form-group-label" 
-            %span.require 必須
-            %br/
-            = f.text_field :phone_number, autocomplete: "phone_number",class: "input-area", placeholder: "例）０３１２３４５６７８"
-          %p.sub-comment
-            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            .form-group
+              = f.label :マンション名, class: "form-group-label" 
+              %span.require 必須
+              %br/
+              = f.text_field :billding autofocus: true, class: "input-area", placeholder: "例）メゾンフリマ"
         .signup-content
-          = f.submit "次へ進む", class: "signup-next-btn"
-          .text-right
-            %p.id-text
-              = link_to "#", class: "id-text-link" do
-                = "本人情報の登録について"
+          = f.submit "登録", class: "signup-next-btn"
   %footer.signup-footer
     %nav.footer-nav
       %ul
