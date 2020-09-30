@@ -7,7 +7,6 @@
     %section.signup-container
       %h2.singup-title 住所情報登録
       = form_with model: @address, id: :register_form, class: :register_form_content, local: true do |f|
-        = render "devise/shared/error_messages", resource: @address
         .signup-content
           .form-group
             = f.label :郵便番号, class: "form-group-label" 
@@ -20,23 +19,19 @@
             %br/
             = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},{class: "input-area", placeholder: "洗濯してください"}
           .form-group
-            .form-group
-              = f.label :市区町村, class: "form-group-label" 
-              %span.require 必須
-              %br/
-              = f.text_field :city autofocus: true, class: "input-area", placeholder: "例）渋谷区"
+            = f.label :市区町村, class: "form-group-label" 
+            %span.require 必須
+            %br/
+            = f.text_field :city, autofocus: true, class: "input-area", placeholder: "例）渋谷区"
           .form-group
-            .form-group
-              = f.label :住所, class: "form-group-label" 
-              %span.require 必須
-              %br/
-              = f.text_field :address autofocus: true, class: "input-area", placeholder: "例）中央１−２−３"
+            = f.label :住所, class: "form-group-label" 
+            %span.require 必須
+            %br/
+            = f.text_field :address, autofocus: true, class: "input-area", placeholder: "例）中央１−２−３"
           .form-group
-            .form-group
-              = f.label :マンション名, class: "form-group-label" 
-              %span.require 必須
-              %br/
-              = f.text_field :billding autofocus: true, class: "input-area", placeholder: "例）メゾンフリマ"
+            = f.label :マンション名, class: "form-group-label" 
+            %br/
+            = f.text_field :billding, autofocus: true, class: "input-area", placeholder: "例）メゾンフリマ"
         .signup-content
           = f.submit "登録", class: "signup-next-btn"
   %footer.signup-footer
