@@ -1,0 +1,48 @@
+.login-main{
+  display: block;
+}
+.login-container{
+  width: 456px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.login-no-account{
+  text-align: center;
+  padding: 40px 64px;
+}
+.login-comment{
+  font-size: 14px;
+}
+.signup-link-btn{
+  display: block;
+  margin: 9px 0 0;
+  border-radius: 4px;
+  border: 1px solid  #0099e8;
+  background-color: #0099e8;
+  color: #fff;
+  line-height: 40px;
+  text-decoration: none;
+}
+.login-content{
+  padding: 32px 64px;
+  border-top: 1px solid #eee;
+}
+.login-btn{
+  margin: 24px 0 0;
+  background-color: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+.forget-password{
+  display: block;
+  margin: 40px 0 0;
+  color: #0099e8;
+  text-decoration: none;
+}
