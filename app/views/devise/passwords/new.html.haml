@@ -1,10 +1,33 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.signup
+  %header.signup-header
+    %h1.signup-header-logo
+      =link_to products_index_path, class: "signup-header-link" do
+        = image_tag src="logo.png", class: "signup-logo"
+  %main.login-main
+    %section.password-reset-container
+      = form_with model:resource, url: session_path(resource_name) do |f|
+        %h2.password-reset-title パスワードをお忘れの方
+        .password-reset-wrapper
+          .password-reset-content
+            .form-group
+              = f.label :メールアドレス, class: "form-group-label" 
+              = f.email_field :email, autofocus: true, class: "input-area", placeholder: "ご登録されたメールアドレス"
+              %p.password-reset-text ご登録されたメールアドレスにパスワード再設定のご案内が送信されます。
+            .form-group
+              = f.submit "送信する", class: "login-btn"
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc

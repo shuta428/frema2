@@ -1,17 +1,37 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.signup
+  %header.signup-header
+    %h1.signup-header-logo
+      =link_to products_index_path, class: "signup-header-link" do
+        = image_tag src="logo.png", class: "signup-logo"
+  %main.login-main
+    %section.login-container
+      = form_with model:resource, url: session_path(resource_name) do |f|
+        .login-no-account
+          %p.login-comment アカウントをお持ちでない方はこちら
+          = link_to new_user_registration_path, class: "signup-link-btn" do
+            新規会員登録
+        .login-content
+          .form-group
+            = f.email_field :email, autofocus: true, class: "input-area", placeholder: "メールアドレス"
+          .form-group-password
+            = f.password_field :password, autofocus: true, class: "input-area", placeholder: "パスワード"
+          .form-group
+            = f.submit "ログイン", class: "login-btn"
+          = link_to new_password_path(resource_name), class: "forget-password" do
+            パスワードをお忘れの方
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc
