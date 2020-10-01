@@ -1,0 +1,52 @@
+.signup-wrapper
+  %header.signup-header
+    %h1.signup-header-logo
+      =link_to products_index_path, class: "signup-header-link" do
+        = image_tag src="logo.png", class: "signup-logo"
+  %main.signup-main
+    %section.signup-container
+      %h2.singup-title 住所情報登録
+      = form_with model: @address, id: :register_form, class: :register_form_content, local: true do |f|
+        .signup-content
+          .form-group
+            = f.label :郵便番号, class: "form-group-label" 
+            %span.require 必須
+            %br/
+            = f.text_field :zipcode, autofocus: true, class: "input-area", placeholder: "例）１２３４５６７"
+          .form-group
+            = f.label :都道府県, class: "form-group-label" 
+            %span.require 必須
+            %br/
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"},{class: "input-area", placeholder: "洗濯してください"}
+          .form-group
+            = f.label :市区町村, class: "form-group-label" 
+            %span.require 必須
+            %br/
+            = f.text_field :city, autofocus: true, class: "input-area", placeholder: "例）渋谷区"
+          .form-group
+            = f.label :住所, class: "form-group-label" 
+            %span.require 必須
+            %br/
+            = f.text_field :address, autofocus: true, class: "input-area", placeholder: "例）中央１−２−３"
+          .form-group
+            = f.label :マンション名, class: "form-group-label" 
+            %br/
+            = f.text_field :billding, autofocus: true, class: "input-area", placeholder: "例）メゾンフリマ"
+        .signup-content
+          = f.submit "登録", class: "signup-next-btn"
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc
