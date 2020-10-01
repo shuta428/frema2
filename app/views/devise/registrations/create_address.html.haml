@@ -4,13 +4,12 @@
       %h1.signup-header-logo
         =link_to products_index_path, class: "signup-header-link" do
           = image_tag src="logo.png", class: "signup-logo"
-  .after-sign-up
-    .after-sign-up_content
-      .after-sign-up_content_box
-        %h1.after-sign-up_content_box_message 登録が完了しました
-        .after-sign-up_content_box_image
-        %p.after-sign-up_content_box_p 引き続きお買い物をお楽しみください
-        = link_to "トップへ戻る", root_path
+  .done-wrapper
+    .done-content
+      %h2.done-message 登録が完了しました。
+      .done-image
+      %p.done-text お買い物をお楽しみください。
+      = link_to "トップへ戻る", root_path,class: "done-link"
   %footer.signup-footer
     %nav.footer-nav
       %ul

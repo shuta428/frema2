@@ -2,6 +2,9 @@ body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   font-size: 14px;
 }
+.signup{
+  background-color: #F5F5F5;
+}
 .signup-wrapper{
   background-color: #F5F5F5;
   
@@ -208,7 +211,7 @@ body{
   bottom: 0;
   left: 0;
   z-index: 1;
-  padding: 40px 0;
+  padding-top: 40px;
   text-align: center;
   display: block;
 }
@@ -236,4 +239,38 @@ body{
   
   margin: 40px  auto 0;
   text-decoration: none;
+}
+.done-wrapper{
+  width: 580px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.done-content{
+  padding: 32px 64px;
+  text-align: center;
+}
+.done-message{
+  font-weight: bold;
+  font-size: 18px;
+}
+.done-image{
+  margin: 0 auto 32px;
+  background-image: image-url("funny-3053583_1920.png");
+  background-size: contain;
+  height: 200px;
+  width: 200px;
+  background-repeat: no-repeat;
+}
+.done-text{
+  font-size: 14px;
+  padding-bottom: 16px;
+  font-weight: bold;
+}
+.done-link{
+  text-decoration: none;
+  color: #333;
+}
+.done-link:hover {
+  opacity: .7;
+  transition: .3s;
 }
