@@ -25,7 +25,7 @@
               = "ログアウト"
           %li.list-signup
             = link_to "#", class: "signup-link" do
-              = "マイページ"
+              #{current_user.nickname}のページ
         - else
           %li.list-login
             = link_to user_session_path, class: "login-link" do
