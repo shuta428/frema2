@@ -74,3 +74,4 @@ gem 'pry-rails'
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'active_hash'
+gem "ancestry"
