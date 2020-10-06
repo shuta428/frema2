@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.images.new
   end
 
   def create
@@ -27,6 +28,6 @@ class ProductsController < ApplicationController
   end
 
   def set_params
-    params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :prefecture_id, :shippingday_id, :price, images_attributes: [:name, :_destroy, :id]).merge(user_id: current_user.id,status: 1)
+    params.require(:product).permit(:name, :content, :category_id, :brand, :condition_id, :fee_id, :prefecture_id, :shippingday_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id, status: 1)
   end
 end
