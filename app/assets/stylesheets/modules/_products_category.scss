@@ -24,28 +24,28 @@
       color: white;
     }
   }
-}
-&:hover{
-  .parent{
-    display: block;
-    .parent-content{
-      width: 260px;
-      &:hover{
-        .child{
-          width: 260px;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 259px;
-          .child-content{
+  &:hover{
+    .parent{
+      display: block;
+      .parent-content{
+        width: 260px;
+        &:hover{
+          .child{
+            width: 260px;
             display: block;
-            &:hover{
-              .grandchild{
-                width: 260px;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 259px;
+            position: absolute;
+            top: 0;
+            left: 259px;
+            .child-content{
+              display: block;
+              &:hover{
+                .grandchild{
+                  width: 260px;
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 259px;
+                }
               }
             }
           }
