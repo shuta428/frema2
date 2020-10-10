@@ -52,7 +52,14 @@
             %span.require 必須
             %br/
           .sell-form-box
-            = f.text_field :name, autofocus: true, class: "selling-input-area", placeholder: "40文字まで"
+            %select#parent
+              %option{value: 0} ---
+              - @parent.each do |parent|
+                %option{value: "#{parent.id}"} #{parent.name}
+          .child
+            %select#child
+          .grand_child
+            = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
         .sell-formgroup
           .sell-product-title
             = f.label :ブランド, class: "form-group-label"

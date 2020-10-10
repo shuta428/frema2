@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day, :phone_number])
   end
 
-  def set_category
-    @parents = Category.where(ancestry: nil)
-  end
-
   private
+
+  def set_category
+    @parent = Category.where(ancestry: nil)
+  end
 
   def production?
     Rails.env.production?
