@@ -1,0 +1,227 @@
+body{
+  position: relative;
+  min-height: 100%;
+  color: rgb(51, 51, 51);
+  background-color: rgb(245, 245,245);
+  font-size: 14px;
+  line-height: 1;
+}
+.product-section{
+  background-color: rgb(255, 255,255);
+  margin: 0px auto;
+  width: 100%;
+  max-width: 700px;
+}
+.product-wrapper{
+  position: relative;
+}
+
+.sell-content{
+  padding: 40px;
+}
+.sell-formgroup{
+  margin: 0;
+}
+.sell-formgroup:not(:first-child){
+  margin-top: 32px;
+}
+.sell-product-title{
+  margin: 0!important;
+}
+.sell-text{
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.image-box{
+  margin-top: 16px;
+  display: block !important;
+}
+.image-box-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px -4px 0px;
+}
+.image-box-content{
+  height: 150px;
+  flex: 1 1 0%;
+  margin-top: 8px;
+  padding: 0px 4px;
+}
+.image-box-inner{
+  place-content: center;
+  align-items: center;
+  background-color: rgb(245, 245,245);
+  border: 1px dashed rbg(204, 204, 204);
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  transition: all 0.5s ease-out 0s;
+}
+.image-btn{
+  display: none;
+}
+.image-text{
+  font-size: 12px;
+  line-height: 1.4em;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
+}
+.bottom-line{
+  border-top-width: 1px;
+  border-top-color: #efefef;
+  border-left: 0 solid #efefef;
+  border-bottom: 0 solid #efefef;
+  border-right: 0 solid #efefef;
+  border-style: solid;
+  margin: 0;
+
+
+}
+.sell-form-box{
+  margin-top: 16px;
+  align-items: center;
+  display: inline-flex;
+  width: 100%;
+  font-size: 16px;
+}
+.selling-input-area{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+}
+.selling-input-textarea{
+  height: 160px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  margin: 0;
+  outline: none;
+  padding: 13px 16px;
+  resize: vertical;
+  vertical-align: middle;
+}
+.sell-detail{
+  color: rgb(136, 136, 136);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-bottom: 24px;
+}
+.price-wrapper{
+  padding: 40px 40px 0px;
+}
+.price-content{
+  margin-bottom: 40px;
+}
+.price-group{
+  padding: 12px 0px;
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 46px;
+}
+.price-group:first-child{
+  padding-top: 0px;
+}
+.price-group:last-child{
+  padding-bottom: 0px;
+}
+
+.price-label{
+  margin-right: auto;
+  white-space: nowrap;
+}
+.price-title{
+  align-items: center;
+  display: flex;
+}
+.yenmark{
+  font-size: 14px;
+  margin-right: 8px;
+}
+.price-box{
+  align-items: center;
+  display: inline-flex;
+  width: 100%;
+  max-width: 285px;
+  color: #222;
+  font-size: 16px;
+}
+.price-form-box{
+  display: inline-block;
+  position: relative;
+  width: inherit;
+}
+.price-input-area{
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+}
+.fee-label{
+  margin-right: auto;
+  white-space: nowrap;
+}
+.fee-value{
+  font-size: 14px;
+}
+.submit-content{
+  margin: 0px auto 32px;
+  width: 360px;
+}
+.selling-submit-btn{
+  background-color: #3CCACE;
+  border: 1px  solid #3CCACE;
+  color: #fff;
+  width: 100%;
+  font-size: 17px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+.submit-text{
+  margin-top: 24px;
+  color: #0095ee;
+  display: flex;
+  width: 100%;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  text-decoration: none;
+  word-break: keep-all;
+}
+.alart-comment{
+  margin: 0px 40px ;
+  background-color: rgb(255, 255,255);
+
+}
+.alart-text{
+  font-size: 12px;
+  line-height: 1.4em;
+}

@@ -1,0 +1,142 @@
+.signup-wrapper
+  %header.signup-header
+    %h1.signup-header-logo
+      =link_to products_index_path, class: "signup-header-link" do
+        = image_tag src="logo.png", class: "signup-logo"
+  %main.product-section
+    .product-wrapper
+    = form_with model: @product, url: products_path, class: :selling_form_content, local: true do |f|
+      .sell-content
+        .sell-formgroup
+          .sell-product-title
+            = f.label :出品画像, class: "form-group-label"
+            %span.require 必須
+            %br/
+          %p.sell-text 最大5枚までアップロードできます。
+          .image-box
+            .image-box-wrapper
+              .image-box-content
+                .image-box-inner
+                  %input.image-btn#image-box
+                  %i{class: "fas fa-camera"}
+                  %p.image-text クリックしてファイルをアップロード
+            .hidden-content
+              = f.fields_for :photos do |i|
+                = i.file_field :name, class: "hidden-field"
+                %input{class:"hidden-field", type: "file", name: "product[photos_attributes][1][name]", id: "product_photos_attributes_1_name" }
+                %input{class:"hidden-field", type: "file", name: "product[photos_attributes][2][name]", id: "product_photos_attributes_2_name" }
+                %input{class:"hidden-field", type: "file", name: "product[photos_attributes][3][name]", id: "product_photos_attributes_3_name" }
+                %input{class:"hidden-field", type: "file", name: "product[photos_attributes][4][name]", id: "product_photos_attributes_4_name" }
+      %hr.bottom-line
+      .sell-content
+        .sell-formgroup
+          .sell-product-title
+            = f.label :商品名, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.text_field :name, autofocus: true, class: "selling-input-area", placeholder: "40文字まで"
+        .sell-formgroup
+          .sell-product-title
+            = f.label :商品の説明, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.text_area :content, autofocus: true, class: "selling-input-textarea", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+      %hr.bottom-line
+      .sell-content
+        %p.sell-detail 商品の詳細
+        .sell-formgroup
+          .sell-product-title
+            = f.label :カテゴリー, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            %select#parent
+              %option{value: 0} ---
+              - @parent.each do |parent|
+                %option{value: "#{parent.id}"} #{parent.name}
+          .child
+            %select#child
+          .grand_child
+            = f.collection_select(:category_id, [], :id, :name, {prompt: "---"}, {id: "grand_child"})
+        .sell-formgroup
+          .sell-product-title
+            = f.label :ブランド, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.text_field :brand, autofocus: true, class: "selling-input-area", placeholder: "例）シャネル"
+        .sell-formgroup
+          .sell-product-title
+            = f.label :商品の状態, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "選択してください"}, { class: "selling-input-area"}
+      %hr.bottom-line
+      .sell-content
+        %p.sell-detail 発送について
+        .sell-formgroup
+          .sell-product-title
+            = f.label :発送料の負担, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.collection_select :fee_id, Fee.all, :id, :name, {prompt: "選択してください"}, { class: "selling-input-area"}
+        .sell-formgroup
+          .sell-product-title
+            = f.label :発送元の地域, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, { class: "selling-input-area"}
+        .sell-formgroup
+          .sell-product-title
+            = f.label :発送までの日数, class: "form-group-label"
+            %span.require 必須
+            %br/
+          .sell-form-box
+            = f.collection_select :shippingday_id, Shippingday.all, :id, :name, {prompt: "選択してください"}, { class: "selling-input-area"}
+      %hr.bottom-line
+      .price-wrapper
+        %p.sell-detail 価格（¥300~9,999,999）
+        .price-content
+          .price-group
+            .price-label
+              .price-title
+                = f.label :販売価格, class: "form-group-label"
+                %span.require 必須
+                %br/
+            %span.yenmark ¥
+            .price-box
+              .price-form-box
+                = f.text_field :price, autofocus: true, class: "price-input-area", placeholder: "　                                                   0"
+          .price-group
+            .fee-label 販売手数料（10%）
+            %span.fee-value ー
+          %hr.bottom-line 
+          .price-group
+            .fee-label 販売利益
+            %span.fee-value ー
+      .submit-content
+        = f.submit "出品する", {class:"selling-submit-btn"}
+        = link_to "もどる", root_path ,class: "submit-text"
+      .alart-comment
+        %p.alart-text 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc
