@@ -13,8 +13,23 @@
     .header-nav
       %ul.left-list
         %li.list-category
-          = link_to "#", class: "category-link" do
+          = link_to "#", class: "categoryBtn" do
             = "カテゴリー"
+          .visibleTree
+            %ul.firstMenu__parents
+              - @parent.each do |parent|
+                %li.firstMenu__parents__parent
+                  = link_to "#{parent.name}", "#", class: "item-link" 
+
+                  %ul.secondMenu__children
+                    - parent.children.each do |child|
+                      %li.secondMenu__children__child
+                        = link_to "#{child.name}", "#", class: "item-link" 
+
+                        %ul.thirdMenu__grandchildren
+                          - child.children.each do |grandchildren|
+                            %li.thirdMenu__grandchildren__grandchild
+                              = link_to "#{grandchildren.name}", "#", class: "item-link" 
         %li.list-bland
           = link_to "#", class: "bland-link" do
             = "ブランド"
