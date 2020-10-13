@@ -1,0 +1,289 @@
+%header.pcheader
+  .header-inner
+    .header-title
+      .header-logo
+        =link_to "/", class: "frema-icon" do
+          = image_tag src="logo.png", class: "FURIMA-btn"
+      .header-searchbox
+        %form.search-box
+          %input{type: "text", class: "search-box-input", id: "seach-input", name: "key", placeholder: "キーワードから探す"}
+          %button{type: "submit", class: "search-submitbtn"} 
+            .header-icon
+              = image_tag src="icon-search 1.png", class: "Search-btn"
+    .header-nav
+      %ul.left-list
+        %li.list-category
+          = link_to "#", class: "category-link" do
+            = "カテゴリー"
+        %li.list-bland
+          = link_to "#", class: "bland-link" do
+            = "ブランド"
+      %ul.right-list
+        - if  user_signed_in?
+          %li.list-login
+            = link_to destroy_user_session_path, class: "login-link" do
+              = "ログアウト"
+          %li.list-signup
+            = link_to users_show_path, class: "signup-link" do
+              #{current_user.nickname}のページ
+        - else
+          %li.list-login
+            = link_to user_session_path, class: "login-link" do
+              = "ログイン"
+          %li.list-signup
+            = link_to new_user_registration_path, class: "signup-link" do
+              = "新規会員登録"
+  %hr.bottom-line
+%main.mypage-container.clearfix
+  .mypage-content
+    %section.mypage-user-icon
+      = link_to "#", class: "user-icon-link" do
+        %figure.figure-content
+          = image_tag src="funny-3053583_1920.png", class: "my-picture"
+        %h2.bold
+          #{current_user.nickname}
+        .mypage-number
+          .text-value
+            評価
+            %span.bold-value 0
+          .text-selling-count
+            出品数
+            %span.bold-value 0
+    %section.mypage-tab-news
+      %ul.mypage-tabs
+        %li.active-news
+          %h3
+            = link_to "#", class: "chage-tabs" do
+              = "お知らせ"
+        %li.active-list
+          %h3
+            = link_to "#", class: "chage-tabs" do
+              = "やることリスト"
+      .tab-content
+        %ul.mypage-item-list
+          %li.mypage-item-lists
+            = link_to "#", class: "mypage-item-link" do
+              %figure.mypage-item-figure
+                = image_tag src="icon_brand.png", class: "mypage-item-img"
+              .mypage-item-body
+                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
+                %time
+                  %i.icon-time
+                  %span.icon-date 3日前
+              %i.icon-arrow-right
+          %li.mypage-item-lists
+            = link_to "#", class: "mypage-item-link" do
+              %figure.mypage-item-figure
+                = image_tag src="icon_brand.png", class: "mypage-item-img"
+              .mypage-item-body
+                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
+                %time
+                  %i.icon-time
+                  %span.icon-date 3日前
+              %i.icon-arrow-right
+          %li.mypage-item-lists
+            = link_to "#", class: "mypage-item-link" do
+              %figure.mypage-item-figure
+                = image_tag src="icon_brand.png", class: "mypage-item-img"
+              .mypage-item-body
+                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
+                %time
+                  %i.icon-time
+                  %span.icon-date 3日前
+              %i.icon-arrow-right
+          %li.mypage-item-lists
+            = link_to "#", class: "mypage-item-link" do
+              %figure.mypage-item-figure
+                = image_tag src="icon_brand.png", class: "mypage-item-img"
+              .mypage-item-body
+                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
+                %time
+                  %i.icon-time
+                  %span.icon-date 3日前
+              %i.icon-arrow-right
+          %li.mypage-item-lists
+            = link_to "#", class: "mypage-item-link" do
+              %figure.mypage-item-figure
+                = image_tag src="icon_brand.png", class: "mypage-item-img"
+              .mypage-item-body
+                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
+                %time
+                  %i.icon-time
+                  %span.icon-date 3日前
+              %i.icon-arrow-right
+          %li.mypage-go-list
+            = link_to "#", class: "mypage-go-link" do
+              = "一覧を見る"
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 購入した商品
+      %ul.mypage-tabs
+        %li.active-news
+          %h3
+            = link_to "#", class: "chage-tabs" do
+              = "取引中"
+        %li.active-list
+          %h3
+            = link_to "#", class: "chage-tabs" do
+              = "過去の取引"
+      .tab-content
+        %ul.mypage-selling-list
+          %li.mypage-selling-lists 取引中の商品がありません
+  .mypage-side
+    %nav.mypage-nav
+      %ul.mypage-nav-list
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "マイページ"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "お知らせ"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "やることリスト"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "いいね！一覧"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "出品する"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "下書き一覧"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "出品した商品-出品中"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "出品した商品-取引中"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "出品した商品-売却済み"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "購入した商品-取引中"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "購入した商品-過去の取引"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "ニュース一覧"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "評価一覧"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "ガイド"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "お問い合わせ"
+            %i.icon-arrow-right
+      %h3.mypage-nav-head メルペイ
+      %ul.mypage-nav-list
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "売上・振込申請"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "ポイント"
+            %i.icon-arrow-right
+      %h3.mypage-nav-head 認定
+      %ul.mypage-nav-list
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "プロフィール"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "発送元・お届け先住所変更"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "支払い方法"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "メール/パスワード"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "本人情報"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "電話番号の確認"
+            %i.icon-arrow-right
+        %li.mypage-nav-lists
+          = link_to "#", class: "mypage-nav-list-item" do
+            = "ログアウト"
+            %i.icon-arrow-right
+%aside.download-banner
+  .download-inner
+    %h2.inner-title だれでもかんたん、人生を変えるフリマアプリ
+    %p.inner-text 今すぐ無料ダウンロード！
+    .download-btn
+      =link_to "/" do
+        = image_tag src="Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "apple"
+      =link_to "/" do
+        = image_tag src="1google-play-badge.png", class: "google"
+.footer
+  %ul.footer-contents
+    %li.footer-content
+      %h2.footer-content-header FURIMAについて
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "会社概要（運営会社）"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "プライバシーポリシー"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMA利用規約"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "ポイントに関する特約"
+    %li.footer-content
+      %h2.footer-content-header FURIMAを見る
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "カテゴリー一覧"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "ブランド一覧"
+    %li.footer-content
+      %h2.footer-content-header ヘルプ＆ガイド
+
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMAガイド"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMAロゴ利用ガイドライン"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "お知らせ"
+  .footer-logo
+    = link_to "#" do
+      = image_tag src="logo-white.png", class: "logo-white"
+  %p.footer-copy © FURIMA
+= link_to new_product_path do
+  .purchase-btn
+    %span.purchase-text 出品する
+    = image_tag src="icon_camera.png", class: "purchase-icon"
