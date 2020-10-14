@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  scope :recent, -> (count) { order(created_at: :desc).limit(count) }
+
   belongs_to_active_hash :shippingday
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :condition
