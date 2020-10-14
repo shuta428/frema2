@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: [:edit, :update]
 
   def index
+    @products = Product.recent(3)
   end
 
   def new
@@ -20,6 +21,9 @@ class ProductsController < ApplicationController
       flash[:alert] = '必須事項を入力してください。'
       redirect_to controller: :products, action: :new
     end
+  end
+
+  def show
   end
 
   def mid_category

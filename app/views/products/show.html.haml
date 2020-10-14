@@ -1,0 +1,35 @@
+%header.pcheader
+  .header-inner
+    .header-title
+      .header-logo
+        =link_to "/", class: "frema-icon" do
+          = image_tag src="logo.png", class: "FURIMA-btn"
+      .header-searchbox
+        %form.search-box
+          %input{type: "text", class: "search-box-input", id: "seach-input", name: "key", placeholder: "キーワードから探す"}
+          %button{type: "submit", class: "search-submitbtn"} 
+            .header-icon
+              = image_tag src="icon-search 1.png", class: "Search-btn"
+    .header-nav
+      %ul.left-list
+        %li.list-category
+          = link_to "#", class: "category-link" do
+            = "カテゴリー"
+        %li.list-bland
+          = link_to "#", class: "bland-link" do
+            = "ブランド"
+      %ul.right-list
+        - if  user_signed_in?
+          %li.list-login
+            = link_to destroy_user_session_path, class: "login-link" do
+              = "ログアウト"
+          %li.list-signup
+            = link_to users_show_path, class: "signup-link" do
+              #{current_user.nickname}のページ
+        - else
+          %li.list-login
+            = link_to user_session_path, class: "login-link" do
+              = "ログイン"
+          %li.list-signup
+            = link_to new_user_registration_path, class: "signup-link" do
+              = "新規会員登録"
