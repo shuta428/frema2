@@ -33,3 +33,206 @@
           %li.list-signup
             = link_to new_user_registration_path, class: "signup-link" do
               = "新規会員登録"
+%nav.breadCrumbs
+  %ul
+    %li
+      = link_to "FURIMA", root_path
+    %li
+      %i.fas.fa-angle-right
+    %li
+      = link_to @product.category.parent.parent.name, "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      = link_to @product.category.parent.name, "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      = link_to @product.category.name, "#"
+    %li
+      %i.fas.fa-angle-right
+    %li
+      %p
+        = @product.name
+
+.main
+  .main__showMain
+    .main__showMain__topContents
+      .main__showMain__topContents__topContent
+        .main__showMain__topContents__topContent__itemBox
+          %h2.main__showMain__topContents__topContent__itemBox__name
+            = @product.name
+          .main__showMain__topContents__topContent__itemBox__body
+            %ul
+              %li.images-main
+                = image_tag @product.images[0].image.url, class: "images-main-image"
+                -if @product.status == 2
+                  .items-box_photo__sold2
+                    .items-box_photo__sold__inner
+                      SOLD
+                -else
+                %ul
+                  - @product.images.each do |image|
+                    %li.images-sub-thumb
+                      = image_tag image.image.url, :width => "75", :height => "75", class: "images-sub-thumb-image"
+          .main__showMain__topContents__topContent__itemBox__price
+            %span<>
+              ¥
+              = @product.price
+            .main__showMain__topContents__topContent__itemBox__price__price-detail
+              %span
+                (税込)
+              - if @product.fee_id == 1
+                %span 送料込み
+              - else
+                %span 着払い
+          .main__showMain__topContents__topContent__itemBox__table
+            %table
+              %tbody
+                %tr
+                  %th
+                    出品者
+                  %td
+                    = @product.user.nickname
+                %tr
+                  %th
+                    カテゴリー
+                  %td
+                    = @product.category.parent.parent.name
+                    %br
+                    = @product.category.parent.name
+                    %br
+                    = @product.category.name
+                %tr
+                  %th
+                    ブランド
+                  %td
+                    = @product.brand
+                %tr
+                  %th
+                    商品の状態
+                  %td
+                    = @product.condition.name
+                %tr
+                  %th
+                    配送料の負担
+                  %td
+                    = @product.fee.name
+                %tr
+                  %th
+                    発送元の地域
+                  %td
+                    = @product.prefecture.name
+                %tr
+                  %th
+                    発送日の目安
+                  %td
+                    = @product.shippingday.name
+          .main__showMain__topContents__topContent__itemBox__detail
+            = simple_format(@product.content)
+          .main__showMain__topContents__topContent__itemBox__optionalArea
+            %ul
+              %li.main__showMain__topContents__topContent__itemBox__optionalArea__likeBtn
+                = link_to "#" do
+                  %i.fas.fa-star
+                  お気に入り 1
+            %ul
+              %li.main__showMain__topContents__topContent__itemBox__optionalArea__optionalBtn
+                = link_to "#" do
+                  %i.fas.fa-flag
+                  不適切な商品の通報
+        .main__showMain__topContents__topContent__commentBox
+          %li.main__showMain__topContents__topContent__commentBox__contents
+          .main__showMain__topContents__topContent__commentBox__newComment
+            %textarea
+
+            %p.main__showMain__topContents__topContent__commentBox__newComment__noticeMsg
+              相手のことを考えて丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %br
+            %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
+              %i.fas.fa-comment
+              コメントする
+        - if @product.status == 2
+        - elsif user_signed_in? && current_user.id == @product.user_id
+          .productsManage
+            = link_to "#" , class:"editBtn" do
+              %i.far.fa-edit
+                編集する
+            = link_to "#" ,method: :delete, data: { confirm: "本当に削除しますか？"}, class:"deleteBtn" do
+              %i.fas.fa-trash
+                削除する
+        - elsif user_signed_in? && current_user.id != @product.user_id
+          .productsManage
+            = link_to "#", class:"buyBtn" do
+              %i.fas.fa-shopping-cart
+                購入する
+      .main__showMain__topContents__links
+        %li
+          = link_to "#" do
+            %i.fas.fa-angle-left
+            %span 前の商品
+        %li
+          = link_to "#" do
+            %span 後ろの商品
+            %i.fas.fa-angle-right
+
+      .main__showMain__topContents__relatedItems
+        = link_to "#{@product.category.parent.parent.name}をもっと見る", "#"
+%aside.download-banner
+  .download-inner
+    %h2.inner-title だれでもかんたん、人生を変えるフリマアプリ
+    %p.inner-text 今すぐ無料ダウンロード！
+    .download-btn
+      =link_to "/" do
+        = image_tag src="Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "apple"
+      =link_to "/" do
+        = image_tag src="1google-play-badge.png", class: "google"
+.footer
+  %ul.footer-contents
+    %li.footer-content
+      %h2.footer-content-header FURIMAについて
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "会社概要（運営会社）"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "プライバシーポリシー"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMA利用規約"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "ポイントに関する特約"
+    %li.footer-content
+      %h2.footer-content-header FURIMAを見る
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "カテゴリー一覧"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "ブランド一覧"
+    %li.footer-content
+      %h2.footer-content-header ヘルプ＆ガイド
+
+      %ul.footer-content-list
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMAガイド"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "FURIMAロゴ利用ガイドライン"
+        %li
+          = link_to "#", class: "footer-content-text" do
+            = "お知らせ"
+  .footer-logo
+    = link_to "#" do
+      = image_tag src="logo-white.png", class: "logo-white"
+  %p.footer-copy © FURIMA
+= link_to new_product_path do
+  .purchase-btn
+    %span.purchase-text 出品する
+    = image_tag src="icon_camera.png", class: "purchase-icon"
