@@ -66,6 +66,11 @@
             %ul
               %li.images-main
                 = image_tag @product.images[0].image.url, class: "images-main-image"
+                -if @product.status == 2
+                  .items-box_photo__sold2
+                    .items-box_photo__sold__inner
+                      SOLD
+                -else
                 %ul
                   - @product.images.each do |image|
                     %li.images-sub-thumb
@@ -81,8 +86,6 @@
                 %span 送料込み
               - else
                 %span 着払い
-          .main__showMain__topContents__topContent__itemBox__detail
-            = simple_format(@product.content)
           .main__showMain__topContents__topContent__itemBox__table
             %table
               %tbody
@@ -125,6 +128,8 @@
                     発送日の目安
                   %td
                     = @product.shippingday.name
+          .main__showMain__topContents__topContent__itemBox__detail
+            = simple_format(@product.content)
           .main__showMain__topContents__topContent__itemBox__optionalArea
             %ul
               %li.main__showMain__topContents__topContent__itemBox__optionalArea__likeBtn
@@ -149,18 +154,18 @@
             %button.main__showMain__topContents__topContent__commentBox__newComment__commentBtn{type:"submit"}
               %i.fas.fa-comment
               コメントする
-        - if @product.status == 1
+        - if @product.status == 2
         - elsif user_signed_in? && current_user.id == @product.user_id
           .productsManage
-            = link_to edit_product_path , class:"editBtn" do
+            = link_to "#" , class:"editBtn" do
               %i.far.fa-edit
                 編集する
-            = link_to product_path,method: :delete, data: { confirm: "本当に削除しますか？"}, class:"deleteBtn" do
+            = link_to "#" ,method: :delete, data: { confirm: "本当に削除しますか？"}, class:"deleteBtn" do
               %i.fas.fa-trash
                 削除する
         - elsif user_signed_in? && current_user.id != @product.user_id
           .productsManage
-            = link_to product_purchases_path(@product), class:"buyBtn" do
+            = link_to "#", class:"buyBtn" do
               %i.fas.fa-shopping-cart
                 購入する
       .main__showMain__topContents__links
