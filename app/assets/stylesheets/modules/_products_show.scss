@@ -593,3 +593,7 @@
     z-index: 1;
   }
 }
+
+.images-sub-thumb:not(.active) {
+  opacity: 0.4;
+}

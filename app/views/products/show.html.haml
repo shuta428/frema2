@@ -64,18 +64,12 @@
             = @product.name
           .main__showMain__topContents__topContent__itemBox__body
             %ul
-              %li
-                = image_tag @product.images[0].image.url
-                -if @product.status == 1
-                  .items-box_photo__sold2
-                    .items-box_photo__sold__inner
-                      SOLD
-                -else
-                
+              %li.images-main
+                = image_tag @product.images[0].image.url, class: "images-main-image"
                 %ul
                   - @product.images.each do |image|
-                    %li
-                      = image_tag image.image.url, :width => "75", :height => "75"
+                    %li.images-sub-thumb
+                      = image_tag image.image.url, :width => "75", :height => "75", class: "images-sub-thumb-image"
           .main__showMain__topContents__topContent__itemBox__price
             %span<>
               ¥
