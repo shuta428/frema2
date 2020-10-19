@@ -15,16 +15,23 @@
           %p.sell-text 最大5枚までアップロードできます。
           .post__drop__box__container
             .prev-content
+              - @product.images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .delete-box
+                      .delete-btn
+                        %span 削除
             .label-content
-              %label{for: "product_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+              %label{for: "product_images_attributes_#{@product.images.length}_image", class: "label-box", id: "label-box--#{@product.images.length}"}
                 %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :images do |i|
                   = i.file_field :image, class: "hidden-field"
-                  %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][image]", id: "product_images_attributes_1_image" }
-                  %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][image]", id: "product_images_attributes_2_image" }
-                  %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][image]", id: "product_images_attributes_3_image" }
-                  %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][image]", id: "product_images_attributes_4_image" }
+                  = i.check_box :_destroy, class: "hidden-checkbox"
+                - @product.images.length.upto(4) do |i|
+                  %input{name: "product[images_attributes][#{i}][image]", id: "product_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
       %hr.bottom-line
       .sell-content
         .sell-formgroup
@@ -115,7 +122,7 @@
             .fee-label 販売利益
             %span.fee-value ー
       .submit-content
-        = f.submit "出品する", {class:"selling-submit-btn"}
+        = f.submit "更新する", {class:"selling-submit-btn"}
         = link_to "もどる", root_path ,class: "submit-text"
       .alart-comment
         %p.alart-text 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。

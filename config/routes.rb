@@ -7,17 +7,15 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-  end
-
-  devise_scope :user do
+    get  'addresses', to: 'users/registrations#new_address'
+    get "users/index",to: "users#index"
+    get "users/card", to: "users#card"
+    get "users/products",to:"users#products"
+    get "users/logout", to: "users#logout"
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
-  resources :products do
-    collection do
-      get "set_images"  
-    end
-  end
+  resources :products
 
   get 'products/index'
 
