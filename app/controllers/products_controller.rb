@@ -25,15 +25,17 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
+    @product = Product.find(params[:id])
     if @product.update(set_params)
       flash[:alert] = '商品情報を編集しました。'
-      redirect_to controller: :products, action: :index, notice: "商品情報を編集しました"
+      redirect_to root_path
     else
       flash[:alert] = '必須事項を入力してください。'
-      redirect_to edit_product_path, notice: "入力必須項目を確認してください"
+      render :show
     end
   end
 

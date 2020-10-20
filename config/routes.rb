@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
-  resources :products
+  resources :products do
+    collection do
+      get "set_images"  
+    end
+  end
 
   get 'products/index'
 

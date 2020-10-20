@@ -5,7 +5,7 @@
         = image_tag src="logo.png", class: "signup-logo"
   %main.product-section
     .product-wrapper
-    = form_with model: @product, url: products_path, class: :selling_form_content, local: true do |f|
+    = form_with model: @product, class: "selling_form_content" do |f|
       .sell-content
         .sell-formgroup
           .sell-product-title
