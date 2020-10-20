@@ -31,12 +31,14 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(set_params)
-      flash[:alert] = '商品情報を編集しました。'
-      redirect_to root_path
+      redirect_to update_done_products_path
     else
-      flash[:alert] = '必須事項を入力してください。'
       render :show
     end
+  end
+
+  def update_done
+    @product_update = Product.order("updated_at DESC").first
   end
 
   def show

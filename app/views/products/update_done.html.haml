@@ -1,0 +1,28 @@
+.signup
+  .signup-wrapper
+    %header.signup-header
+      %h1.signup-header-logo
+        =link_to products_index_path, class: "signup-header-link" do
+          = image_tag src="logo.png", class: "signup-logo"
+  .done-wrapper
+    .done-content
+      %h2.done-message 変更が完了しました。
+      .done-image
+      %p.done-text お買い物をお楽しみください。
+      = link_to "トップへ戻る", root_path,class: "done-link"
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc
