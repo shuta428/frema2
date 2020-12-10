@@ -1,0 +1,65 @@
+.signup-wrapper
+  %header.signup-header
+    %h1.signup-header-logo
+      =link_to products_index_path, class: "signup-header-link" do
+        = image_tag src="logo.png", class: "signup-logo"
+  %hr.bottom-line
+  %main.card-main
+    %section.pay-content
+      %h2.pay-title クレジットカード情報入力
+    = form_with url: cards_path, method: :post, html: { name: "inputForm" } do |f|
+      .pay-content-box
+        %section.pay-content-inner
+          .pay-form-group
+            .pay-form-title
+              = f.label :カード番号, class: 'form-group-label'
+              %span.require 必須
+            .pay-form-content
+              .pay-inputarea
+                = f.text_field :card_number, type: 'text', class: 'input-number', placeholder: '半角数字のみ', maxlength: "16", id: "card_number"
+              .img-cards
+                = image_tag(image_path('cards/visa.gif'), class: 'img-logo')
+                = image_tag(image_path('cards/master.gif'), class: 'img-logo')
+                = image_tag(image_path('cards/jcb.gif'), class: 'img-logo')
+                = image_tag(image_path('cards/amex.gif'), class: 'img-logo')
+                = image_tag(image_path('cards/diners.gif'), class: 'img-logo')
+                = image_tag(image_path('cards/discover.gif'), class: 'img-logo')
+          .pay-form-group-middle
+            .pay-form-title-middle
+              = f.label :有効期限, class: 'form-group-label'
+              %span.require 必須
+            .par-form-limit
+              .pay-form-box
+                .pay-form-input-limit
+                  = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'input-expire', id: "exp_month"
+                %span.expire-year 月
+              .pay-form-box
+                .pay-form-input-limit
+                  = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'input-expire', id: "exp_year"
+                %span.expire-year 年
+          .pay-form-group-bottom
+            .pay-form-title
+              = f.label :セキュリティコード, class: 'form-group-label'
+              %span.require 必須
+            .pay-form-content
+              .pay-inputarea
+                = f.text_field :cvc, type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4", id: "cvc"
+          .submit-content
+            = f.submit "登録する", class:"selling-submit-btn", id: "token_submit"
+            = link_to "もどる", root_path ,class: "submit-text"
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc
