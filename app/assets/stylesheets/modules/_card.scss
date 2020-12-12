@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+.card-main{
+  background-color: rgb(255, 255, 255);
+  margin: 0px auto;
+  width: 100%;
+}
+.pay-content{
+  padding: 24px 16px;
+  border-bottom: 1px solid rgb(245, 245, 245);
+  display: block;
+}
+.pay-title{
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.pay-content-box{
+  max-width: 375px;
+  margin: 0px auto;
+  padding: 0px 16px;
+}
+.pay-content-inner{
+  padding: 32px 0px 48px 0px;
+}
+.pay-form-content{
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+  color: #222;
+  font-size: 16px;
+}
+.pay-inputarea{
+  display: inline-block;
+  position: relative;
+  width: inherit;
+}
+.input-number{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+}
+
+.img-logo{
+  max-height: 20px;
+  max-width: 30px;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.pay-form-group-middle{
+  margin-top: 28px;
+}
+.pay-form-group-bottom{
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+.pay-form-title-middle{
+  align-items: center;
+  display: flex;
+}
+.par-form-limit{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-top: 16px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.pay-form-box{
+  display: flex;
+  width: 100%;
+}
+.pay-form-input-limit{
+  display: inline-block;
+  position: relative;
+  width: inherit;
+}
+.input-expire{
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0 56px 0 16px;
+  width: 100%;
+  flex: 1 1 0%;
+
+}
+.input-expire{
+  width: 100%;
+  text-align: center;
+}
+.expire-year{
+  width: 30px;
+  text-align: right;
+  line-height: 48px;
+}

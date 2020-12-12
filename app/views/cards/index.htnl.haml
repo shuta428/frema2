@@ -1,0 +1,36 @@
+.signup-wrapper
+  %header.signup-header
+    %h1.signup-header-logo
+      =link_to products_index_path, class: "signup-header-link" do
+        = image_tag src="logo.png", class: "signup-logo"
+  %hr.bottom-line
+  %main.card-main
+    %section.pay-content
+      %h2.pay-title 支払い方法
+    .card-menu
+      %section.view-card
+        = link_to "#", class: "view-card-link" do
+          = "登録しているカードを確認する"
+      %section.add-card
+        = link_to new_card_path, class: "add-card-link" do
+          = "クレジットカードを追加する"
+      %section.return
+        = link_to users_show_path, class: "return-link" do
+          = "戻る"
+
+  %footer.signup-footer
+    %nav.footer-nav
+      %ul
+        %li.footer-text-list
+          = link_to "#", class: "footer-text" do
+            = "プライバシーポリシー"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "メルカリ利用規約"
+        %li.footer-text-list-next
+          = link_to "#", class: "footer-text" do
+            = "特定商取引に関する表記"
+    = link_to "#" ,class: "footer-logo-link" do
+      = image_tag src="logo.png", class: "footer-logo"
+    %p
+      %small.footer-copy © FURIMA.Inc

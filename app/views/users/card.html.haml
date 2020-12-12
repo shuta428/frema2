@@ -36,98 +36,16 @@
   %hr.bottom-line
 %main.mypage-container.clearfix
   .mypage-content
-    %section.mypage-user-icon
-      = link_to "#", class: "user-icon-link" do
-        %figure.figure-content
-          = image_tag src="funny-3053583_1920.png", class: "my-picture"
-        %h2.bold
-          #{current_user.nickname}
-        .mypage-number
-          .text-value
-            評価
-            %span.bold-value 0
-          .text-selling-count
-            出品数
-            %span.bold-value 0
-    %section.mypage-tab-news
-      %ul.mypage-tabs
-        %li.active-news
-          %h3
-            = link_to "#", class: "chage-tabs" do
-              = "お知らせ"
-        %li.active-list
-          %h3
-            = link_to "#", class: "chage-tabs" do
-              = "やることリスト"
-      .tab-content
-        %ul.mypage-item-list
-          %li.mypage-item-lists
-            = link_to "#", class: "mypage-item-link" do
-              %figure.mypage-item-figure
-                = image_tag src="icon_brand.png", class: "mypage-item-img"
-              .mypage-item-body
-                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
-                %time
-                  %i.icon-time
-                  %span.icon-date 3日前
-              %i.icon-arrow-right
-          %li.mypage-item-lists
-            = link_to "#", class: "mypage-item-link" do
-              %figure.mypage-item-figure
-                = image_tag src="icon_brand.png", class: "mypage-item-img"
-              .mypage-item-body
-                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
-                %time
-                  %i.icon-time
-                  %span.icon-date 3日前
-              %i.icon-arrow-right
-          %li.mypage-item-lists
-            = link_to "#", class: "mypage-item-link" do
-              %figure.mypage-item-figure
-                = image_tag src="icon_brand.png", class: "mypage-item-img"
-              .mypage-item-body
-                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
-                %time
-                  %i.icon-time
-                  %span.icon-date 3日前
-              %i.icon-arrow-right
-          %li.mypage-item-lists
-            = link_to "#", class: "mypage-item-link" do
-              %figure.mypage-item-figure
-                = image_tag src="icon_brand.png", class: "mypage-item-img"
-              .mypage-item-body
-                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
-                %time
-                  %i.icon-time
-                  %span.icon-date 3日前
-              %i.icon-arrow-right
-          %li.mypage-item-lists
-            = link_to "#", class: "mypage-item-link" do
-              %figure.mypage-item-figure
-                = image_tag src="icon_brand.png", class: "mypage-item-img"
-              .mypage-item-body
-                .mypage-item-text かんたん操作で”必ず”P300とコーヒーもらえる！
-                %time
-                  %i.icon-time
-                  %span.icon-date 3日前
-              %i.icon-arrow-right
-          %li.mypage-go-list
-            = link_to "#", class: "mypage-go-link" do
-              = "一覧を見る"
-    %section.mypage-tab-container
-      %h2.mypage-tab-head 購入した商品
-      %ul.mypage-tabs
-        %li.active-news
-          %h3
-            = link_to "#", class: "chage-tabs" do
-              = "取引中"
-        %li.active-list
-          %h3
-            = link_to "#", class: "chage-tabs" do
-              = "過去の取引"
-      .tab-content
-        %ul.mypage-selling-list
-          %li.mypage-selling-lists 取引中の商品がありません
+    .card-references
+      %section.pay-content
+        %h2.pay-title 支払い方法
+      .card-menu
+        %section.view-card
+          = link_to "#", class: "view-card-link" do
+            = "登録しているカードを確認する"
+        %section.add-card
+          = link_to new_card_path, class: "add-card-link" do
+            = "クレジットカードを追加する"
   .mypage-side
     %nav.mypage-nav
       %ul.mypage-nav-list
